@@ -1,8 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container">
   <div class="jumbotron">
-    <h3 class="text-center">You are viewing 5th SEM toppers list 2021-2022</h3>
+    <h3 class="text-center">5th SEM toppers list 2021-2022</h3>
     <br>
     <table class="table">
       <thead class="thead-dark">
@@ -26,7 +25,146 @@
         {% endfor %}
       </tbody>
     </table>
-  </div>
+    <br><br>
+    <h3 class="text-center">Branch Wise</h3>
+    <br><br>
+    <h2>Information Science</h2>
+    <br>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">USN</th>
+          <th scope="col">SGPA</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in is5 %}
+        <tr>
+          <th scope="row">{{forloop.counter}}</th>
+          <td>{{i.sname.name}}</td>
+          <td>{{i.sname.usn}}</td>
+          <td>{{i.sgpa}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <br>
+    <h2>Computer Science</h2>
+    <br>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">USN</th>
+          <th scope="col">SGPA</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in cs5 %}
+        <tr>
+          <th scope="row">{{forloop.counter}}</th>
+          <td>{{i.sname.name}}</td>
+          <td>{{i.sname.usn}}</td>
+          <td>{{i.sgpa}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <br>
+    <h2>Electronics and Communication</h2>
+    <br>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">USN</th>
+          <th scope="col">SGPA</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in ec5 %}
+        <tr>
+          <th scope="row">{{forloop.counter}}</th>
+          <td>{{i.sname.name}}</td>
+          <td>{{i.sname.usn}}</td>
+          <td>{{i.sgpa}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <br>
+    <h2>Electrical</h2>
+    <br>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">USN</th>
+          <th scope="col">SGPA</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in ee5 %}
+        <tr>
+          <th scope="row">{{forloop.counter}}</th>
+          <td>{{i.sname.name}}</td>
+          <td>{{i.sname.usn}}</td>
+          <td>{{i.sgpa}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <br>
+    <h2>Mechanical</h2>
+    <br>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">USN</th>
+          <th scope="col">SGPA</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in me5 %}
+        <tr>
+          <th scope="row">{{forloop.counter}}</th>
+          <td>{{i.sname.name}}</td>
+          <td>{{i.sname.usn}}</td>
+          <td>{{i.sgpa}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  <br>
+  <h2>Aeronautical </h2>
+  <br>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">USN</th>
+        <th scope="col">SGPA</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in ae5 %}
+      <tr>
+        <th scope="row">{{forloop.counter}}</th>
+        <td>{{i.sname.name}}</td>
+        <td>{{i.sname.usn}}</td>
+        <td>{{i.sgpa}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </div>
 
 
