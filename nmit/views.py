@@ -14,3 +14,17 @@ def home(request):
 
 def aboutus(request):
     return render(request,'aboutus.html')
+
+def namewise(request):
+    result = {}
+    if request.method == 'POST':
+        sname = request.POST.get('name', False)
+        result = list(student.objects.filter(name__contains=sname))
+        print(result)
+        return render(request,'namewise.html',{'result':result})
+    return render(request,'namewise.html',{'result':result})
+
+def result(request,id):
+    name = student.objects.get(id = id)
+    marks = gpa.objects.get(sname=name)
+    return render(request,'result.html',{'marks':marks})

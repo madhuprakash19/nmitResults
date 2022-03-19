@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+  <div class="jumbotron">
+    <h3>How search works??</h3>
+    <span>Enter the part of the name to search. For example</span><br>
+    <span>Searching Akash gives: T P MADHU PRAKASH , AKASH A BENKI , JAYAPRAKASH S ,   AKASH M</span><br>
+    <span>As each name contains Akash as substring</span><br><br>
+    <span class="text-muted">--Incase if your name don't appear , the result is yet to be announced or might have been missed during web scraping--</span>
+    <br><br>
+    <form class="form" method="post">
+      {% csrf_token %}
+      Enter name:
+      <input type="text" name="name" value="Akash"><br><br>
+      <input type="submit" name="" value="search" class="btn btn-sm btn-primary">
+    </form>
+  </div>
+  {% for i in result %}
+  <a href="{% url 'nmit:result' id=i.id %}">{{i}}</a><br>
+  {% endfor %}
+</div>
+
+
+{% endblock %}

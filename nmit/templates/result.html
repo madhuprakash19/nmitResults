@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+  <div class="jumbotron">
+    <h3>NAME: {{marks.sname.name}}</h3>
+    <h4 class="text text-muted">USN: {{marks.sname.usn}}</h4>
+    <p>BRANCH: {{marks.branch}}</p>
+    <b>SGPA: </b>{{marks.sgpa}}<br>
+    <b>CGPA: </b>{{marks.cgpa}}<br><br><br>
+    <p class="text-muted">Subject data coming soon</p>
+  </div>
+</div>
+{% endblock %}
