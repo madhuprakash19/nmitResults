@@ -9,57 +9,56 @@ from nmit.models import student,gpa
 # exec(open("dataextraction.py").read())
 
 usn = [
-"1NT19IS001",
-"1NT19IS002",
-"1NT19IS003",
-"1NT19IS004",
-"1NT19IS005",
-"1NT19IS006",
-"1NT19IS007",
-"1NT19IS008",
-"1NT19IS009",
-"1NT19IS010",
-"1NT19IS011",
-"1NT19IS012",
-"1NT19IS013",
-"1NT19IS014",
-"1NT19IS015",
-"1NT19IS016",
-"1NT19IS017",
-"1NT19IS018",
-"1NT19IS019",
-"1NT19IS020",
-"1NT19IS021",
-"1NT19IS022",
-"1NT19IS023",
-"1NT19IS024",
-"1NT19IS025",
-"1NT19IS026",
-"1NT19IS027",
-"1NT19IS028",
-"1NT19IS029",
-"1NT19IS030",
-"1NT19IS031",
-"1NT19IS032",
-"1NT19IS033",
-"1NT19IS034",
-"1NT19IS035",
-"1NT19IS036",
-"1NT19IS037",
-"1NT19IS038",
-"1NT19IS039",
-"1NT19IS040",
-"1NT19IS041",
-"1NT19IS042",
-"1NT19IS043",
-"1NT19IS044",
-"1NT19IS045",
-"1NT19IS046",
-"1NT19IS047",
-"1NT19IS048",
-"1NT19IS049",
-"1NT19IS050"
-
+"1NT19IS051",
+"1NT19IS052",
+"1NT19IS053",
+"1NT19IS054",
+"1NT19IS055",
+"1NT19IS056",
+"1NT19IS057",
+"1NT19IS058",
+"1NT19IS059",
+"1NT19IS060",
+"1NT19IS061",
+"1NT19IS062",
+"1NT19IS063",
+"1NT19IS064",
+"1NT19IS065",
+"1NT19IS066",
+"1NT19IS067",
+"1NT19IS068",
+"1NT19IS069",
+"1NT19IS070",
+"1NT19IS071",
+"1NT19IS072",
+"1NT19IS073",
+"1NT19IS074",
+"1NT19IS075",
+"1NT19IS076",
+"1NT19IS077",
+"1NT19IS078",
+"1NT19IS079",
+"1NT19IS080",
+"1NT19IS081",
+"1NT19IS082",
+"1NT19IS083",
+"1NT19IS084",
+"1NT19IS085",
+"1NT19IS086",
+"1NT19IS087",
+"1NT19IS088",
+"1NT19IS089",
+"1NT19IS090",
+"1NT19IS091",
+"1NT19IS092",
+"1NT19IS093",
+"1NT19IS094",
+"1NT19IS095",
+"1NT19IS096",
+"1NT19IS097",
+"1NT19IS098",
+"1NT19IS099",
+"1NT19IS100"
     ]
 
 captcha = str(input('Enter captcha'))
@@ -109,27 +108,27 @@ for i in usn:
             print("in stu try")
             temp = student.objects.get(usn=usn1)
         except:
-            print("in stu except")
+            # print("in stu except")
             temp = student(name=name1, usn=usn1, branch=branch1)
             temp.save()
         s = student.objects.get(usn=usn1)
-        print(s)
+        # print(s)
         try:
-            print("in gpa try")
+            # print("in gpa try")
             temp = gpa.objects.get(sname=s)
-            print("able to get")
+            # print("able to get")
             temp.sgpa = sgpa1
             temp.cgpa = cgpa1
             temp.branch = branch1
             temp.save()
         except:
-            print("in gpa except")
+            # print("in gpa except")
             temp1 = gpa(sname=s, sgpa=sgpa1, cgpa=cgpa1, branch=branch1)
-            print("temp1")
+            # print("temp1")
             temp1.save()
-            print("gpa done")
+            # print("gpa done")
     except:
-        print("ok")
+        # print("ok")
         m = open('nulldata.txt', 'a')
         temp2 = i + ',Data not found\n'
         m.write(temp2)

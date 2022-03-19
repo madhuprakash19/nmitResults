@@ -65,3 +65,9 @@
 1NT19IS042,Data not found
 1NT19IS043,Data not found
 1NT19IS046,Data not found
+1NT19IS059,Data not found
+1NT19IS060,Data not found
+1NT19IS066,Data not found
+1NT19IS070,Data not found
+1NT19IS075,Data not found
+1NT19IS094,Data not found
