@@ -7,5 +7,6 @@ urlpatterns = [
     path('sem7/',views.sem7,name='sem7'),
     path('aboutus',views.aboutus,name='aboutus'),
     path('namewise',views.namewise,name='namewise'),
-    path('result/<int:id>',views.result,name='result')
+    path('result/<int:id>',views.result,name='result'),
+    path('branchwise',views.branchwise,name='branchwise')
 ]

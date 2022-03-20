@@ -32,7 +32,6 @@ def namewise(request):
     if request.method == 'POST':
         sname = request.POST.get('name', False)
         result = list(student.objects.filter(name__contains=sname))
-        print(result)
         return render(request,'namewise.html',{'result':result})
     return render(request,'namewise.html',{'result':result})
 
@@ -40,3 +39,31 @@ def result(request,id):
     name = student.objects.get(id = id)
     marks = gpa.objects.get(sname=name)
     return render(request,'result.html',{'marks':marks})
+
+def branchwise(request):
+    result = {}
+    branch={}
+    check = 0
+    if request.method == 'POST':
+        branch = request.POST['branch']
+        check = 1
+        result = list(gpa.objects.filter(branch=branch).order_by('-sgpa'))
+        return render(request,'branchwise.html',{'result':result,'branch':branch,'check':check})
+    return render(request,'branchwise.html',{'result':result,'branch':branch,'check':check})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#

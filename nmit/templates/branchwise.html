@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron">
+  <form class="form" method="post">
+    {% csrf_token %}
+  <label for="branch">Select a branch : </label>
+  <select name="branch">
+    <option value="B.E - IS, Sem 5">IS, Sem 5</option>
+    <option value="B.E - CS, Sem 5">CS, Sem 5</option>
+    <option value="B.E - EC, Sem 5">EC, Sem 5</option>
+    <option value="B.E - EE, Sem 5">EE, Sem 5</option>
+    <option value="B.E - ME, Sem 5">ME, Sem 5</option>
+    <option value="B.E - AE, Sem 5">AE, Sem 5</option>
+    <option value="B.E - CV, Sem 5">CV, Sem 5</option>
+    <option value="B.E - IS, Sem 7">IS, Sem 7</option>
+    <option value="B.E - CS, Sem 7">CS, Sem 7</option>
+    <option value="B.E - EC, Sem 7">EC, Sem 7</option>
+    <option value="B.E - EE, Sem 7">EE, Sem 7</option>
+    <option value="B.E - ME, Sem 7">ME, Sem 7</option>
+    <option value="B.E - AE, Sem 7">AE, Sem 7</option>
+    <option value="B.E - CV, Sem 7">CV, Sem 7</option>
+  </select>
+  <br><br>
+  <input type="submit" value="Show" class="btn btn-sm btn-primary">
+</form>
+<br><br><br>
+{% if check %}
+<h3 class="text-muted">{{branch}} Results</h3><br>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">USN</th>
+      <th scope="col">BRANCH</th>
+      <th scope="col">SGPA</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in result %}
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{i.sname.name}}</td>
+      <td>{{i.sname.usn}}</td>
+      <td>{{i.branch}}</td>
+      <td>{{i.sgpa}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p>Select branch from dropdown list and press show to view branchwise result</p>
+{% endif %}
+</div>
+
+{% endblock %}
