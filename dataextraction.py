@@ -9,56 +9,8 @@ from nmit.models import student,gpa
 # exec(open("dataextraction.py").read())
 
 usn = [
-"1NT18EC201",
-"1NT18EC202",
-"1NT18EC203",
-"1NT18EC204",
-"1NT18EC205",
-"1NT18EC206",
-"1NT18EC207",
-"1NT18EC208",
-"1NT18EC209",
-"1NT18EC210",
-"1NT18EC211",
-"1NT18EC212",
-"1NT18EC213",
-"1NT18EC214",
-"1NT18EC215",
-"1NT18EC216",
-"1NT18EC217",
-"1NT18EC218",
-"1NT18EC219",
-"1NT18EC220",
-"1NT18EC221",
-"1NT18EC222",
-"1NT18EC223",
-"1NT18EC224",
-"1NT18EC225",
-"1NT18EC226",
-"1NT18EC227",
-"1NT18EC228",
-"1NT18EC229",
-"1NT18EC230",
-"1NT18EC231",
-"1NT18EC232",
-"1NT18EC233",
-"1NT18EC234",
-"1NT18EC235",
-"1NT18EC236",
-"1NT18EC237",
-"1NT18EC238",
-"1NT18EC239",
-"1NT18EC240",
-"1NT18EC241",
-"1NT18EC242",
-"1NT18EC243",
-"1NT18EC244",
-"1NT18EC245",
-"1NT18EC246",
-"1NT18EC247",
-"1NT18EC248",
-"1NT18EC249",
-"1NT18EC250",
+"1NT19AE060",
+"1NT19AE028"
 
 
     ]
@@ -66,15 +18,15 @@ usn = [
 captcha = str(input('Enter captcha'))
 
 for i in usn:
-    pg.moveTo(1029, 429, duration=0.2)
+    pg.moveTo(1029, 429, duration=0.5)
     pg.click(1029, 429)
     pg.typewrite(i)
 
-    pg.moveTo(1029, 458, duration=0.2)
+    pg.moveTo(1029, 458, duration=0.5)
     pg.click(1029, 458)
     pg.typewrite(captcha)
 
-    pg.moveTo(1176, 546, duration=0.2)
+    pg.moveTo(1176, 546, duration=0.5)
     pg.click(1176, 546)
     time.sleep(0.5)
     pg.hotkey('ctrl', 'u')
@@ -135,5 +87,5 @@ for i in usn:
         temp2 = i + ',Data not found\n'
         m.write(temp2)
         m.close()
-    pg.moveTo(17, 48, duration=0.2)
+    pg.moveTo(17, 48, duration=0.5)
     pg.click(17, 48)
