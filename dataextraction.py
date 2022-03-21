@@ -9,10 +9,10 @@ from nmit.models import student,gpa
 # exec(open("dataextraction.py").read())
 
 usn = [
-"1NT19AE060",
-"1NT19AE028"
-
-
+"1NT18CV077",
+"1NT19CS142",
+"1NT19IS147",
+"1NT18CV032",
     ]
 
 captcha = str(input('Enter captcha'))

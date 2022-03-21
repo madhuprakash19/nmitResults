@@ -2,6 +2,9 @@
 {% block content %}
 <div class="container">
   <div class="jumbotron">
+    <p>Only enter the USN's which are missing in this site but visible in https://nmitresults.contineo.in/</p>
+    <p>If your USN not there in https://nmitresults.contineo.in/. Those USN's cannot be added</p>
+    <b>Last Updated</b>: 21/03/2022 10:47 PM <br><br>
     <form  method="post">
       {% csrf_token %}
       Enter missing or updated USN:
