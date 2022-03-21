@@ -8,5 +8,6 @@ urlpatterns = [
     path('aboutus',views.aboutus,name='aboutus'),
     path('namewise',views.namewise,name='namewise'),
     path('result/<int:id>',views.result,name='result'),
-    path('branchwise',views.branchwise,name='branchwise')
+    path('branchwise',views.branchwise,name='branchwise'),
+    path('missingusn',views.missingusn,name='missing'),
 ]

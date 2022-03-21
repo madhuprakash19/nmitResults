@@ -39,3 +39,10 @@ class marks(models.Model):
 
     def __str__(self):
         return str(self.sname.name)
+
+class missing(models.Model):
+    usn = models.CharField(max_length=10,blank=True,null=True)
+    mail = models.EmailField(max_length=254)
+
+    def __str__(self):
+        return str(self.usn)

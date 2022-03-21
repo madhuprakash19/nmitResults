@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from nmit.models import student,gpa
+from nmit.models import student,gpa,missing
 # Create your views here.
 def sem5(request):
     topper5 = list(gpa.objects.filter(branch__in = ['B.E - IS, Sem 5','B.E - CS, Sem 5','B.E - EC, Sem 5','B.E - EE, Sem 5','B.E - ME, Sem 5','B.E - AE, Sem 5','B.E - CV, Sem 5']).order_by('-sgpa')[:10:1])
@@ -50,6 +50,19 @@ def branchwise(request):
         result = list(gpa.objects.filter(branch=branch).order_by('-sgpa'))
         return render(request,'branchwise.html',{'result':result,'branch':branch,'check':check})
     return render(request,'branchwise.html',{'result':result,'branch':branch,'check':check})
+
+def missingusn(request):
+    message = {}
+    if request.method == 'POST':
+        musn = request.POST.get('missingusn', False)
+        smail = request.POST.get('email',False)
+        message = 'Requested USN will be added to site soon'
+        print(musn)
+        temp = missing(usn = musn,mail = smail)
+        temp.save()
+        return render(request,'missingusn.html',{'message':message})
+    return render(request,'missingusn.html',{'message':message})
+
 
 
 

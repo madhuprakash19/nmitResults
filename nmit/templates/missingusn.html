@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+  <div class="jumbotron">
+    <form  method="post">
+      {% csrf_token %}
+      Enter missing or updated USN:
+      <input type="text" name="missingusn" value="" required><br><br>
+      <label for="email">Enter your email:</label>
+      <input type="email" name="email" required><br>
+      <input type="submit" name="" value="Add usn" class="btn btn-sm btn-primary">
+    </form>
+  </div>
+  {% if message %}
+  {{message}}
+  {% endif %}
+</div>
+{% endblock %}

@@ -5,8 +5,10 @@
     <h3>How search works??</h3>
     <span>Enter the part of the name to search. For example</span><br>
     <span>Searching Akash gives: T P MADHU PRAKASH , AKASH A BENKI , JAYAPRAKASH S ,   AKASH M</span><br>
-    <span>As each name contains Akash as substring</span><br><br>
-    <span class="text-muted">--Incase if your name don't appear , the result is yet to be announced or might have been missed during web scraping--</span>
+    <span>As each name contains Akash as substring</span><br>
+    <span class="text-muted">--Incase if your name don't appear , the result is yet to be announced or might have been missed during web scraping--</span><br>
+    <b>Missing USN ??</b>
+    <a href="{% url 'nmit:missing' %}">Click here to add</a><br>
     <br><br>
     <form class="form" method="post">
       {% csrf_token %}
