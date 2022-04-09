@@ -1,33 +1,33 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <style type="text/css">
-    body{
-background-color: black;
-color: white;
+{% extends "base.html" %}
+{% block content %}
+<style media="screen">
+.footer {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  padding: 30px 0;
+  bottom: 0;
 }
-
-h1 {
-color: red;
+.icons .fa {
+    color: #85888f;
+    margin: 0 13px;
+    cursor: pointer;
+    padding: 18px 0;
 }
-
-h6{
-color: red;
-text-decoration: underline;
-}
-
-  </style>
-<title>NMIT-RESULTS</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-</head>
-<body>
+</style>
 <div class="w3-display-middle">
-<h1 class="w3-jumbo w3-animate-top w3-center"><code>WEBSITE BY</code></h1>
+<h1 class="w3-jumbo w3-animate-top w3-center">WEBSITE BY</h1>
 <hr class="w3-border-white w3-animate-left" style="margin:auto;width:50%">
 <h3 class="w3-center w3-animate-right">3Madhu</h3>
+<br>
+<div class="footer w3-center w3-animate-bottom">
+  <div class="icons">
+      <a href="https://www.facebook.com/madhuprakash19/" target="_blank"><i class="fa fa-facebook"></i></a>
+      <a href="https://twitter.com/Madhuprakash19" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://www.instagram.com/madhu_prakash19/" target="_blank"><i class="fa fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/madhu-prakash-3129061a3/" target="_blank"><i class="fa fa-linkedin"></i></a>
+  </div>
 </div>
-</body>
-</html>
+</div>
+
+{% endblock %}
