@@ -1,6 +1,18 @@
 from django.shortcuts import render
 from nmit.models import student,gpa,missing
 # Create your views here.
+
+def sem3(request):
+    topper3 = list(gpa.objects.filter(branch__in = ['B.E - IS, Sem 3','B.E - CS, Sem 3','B.E - EC, Sem 3','B.E - EE, Sem 3','B.E - ME, Sem 3','B.E - AE, Sem 3','B.E - CV, Sem 3']).order_by('-sgpa')[:10:1])
+    is3 = list(gpa.objects.filter(branch = 'B.E - IS, Sem 3').order_by('-sgpa')[:10:1])
+    cs3 = list(gpa.objects.filter(branch = 'B.E - CS, Sem 3').order_by('-sgpa')[:10:1])
+    ec3 = list(gpa.objects.filter(branch = 'B.E - EC, Sem 3').order_by('-sgpa')[:10:1])
+    me3 = list(gpa.objects.filter(branch = 'B.E - ME, Sem 3').order_by('-sgpa')[:10:1])
+    ae3 = list(gpa.objects.filter(branch = 'B.E - AE, Sem 3').order_by('-sgpa')[:10:1])
+    ee3 = list(gpa.objects.filter(branch = 'B.E - EE, Sem 3').order_by('-sgpa')[:10:1])
+    cv3 = list(gpa.objects.filter(branch = 'B.E - CV, Sem 3').order_by('-sgpa')[:10:1])
+    return render(request,'sem3.html',{'topper3':topper3,'is3':is3,'cs3':cs3,'ec3':ec3,'me3':me3,'ae3':ae3,'ee3':ee3,'cv3':cv3})
+
 def sem5(request):
     topper5 = list(gpa.objects.filter(branch__in = ['B.E - IS, Sem 5','B.E - CS, Sem 5','B.E - EC, Sem 5','B.E - EE, Sem 5','B.E - ME, Sem 5','B.E - AE, Sem 5','B.E - CV, Sem 5']).order_by('-sgpa')[:10:1])
     is5 = list(gpa.objects.filter(branch = 'B.E - IS, Sem 5').order_by('-sgpa')[:10:1])

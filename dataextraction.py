@@ -9,24 +9,70 @@ from nmit.models import student,gpa
 # exec(open("dataextraction.py").read())
 
 usn = [
-"1NT18CV077",
-"1NT19CS142",
-"1NT19IS147",
-"1NT18CV032",
+"1NT20CV001",
+"1NT20CV002",
+"1NT20CV003",
+"1NT20CV004",
+"1NT20CV005",
+"1NT20CV006",
+"1NT20CV007",
+"1NT20CV008",
+"1NT20CV009",
+"1NT20CV010",
+"1NT20CV011",
+"1NT20CV012",
+"1NT20CV013",
+"1NT20CV014",
+"1NT20CV015",
+"1NT20CV016",
+"1NT20CV017",
+"1NT20CV018",
+"1NT20CV019",
+"1NT20CV020",
+"1NT20CV021",
+"1NT20CV022",
+"1NT20CV023",
+"1NT20CV024",
+"1NT20CV025",
+"1NT20CV026",
+"1NT20CV027",
+"1NT20CV028",
+"1NT20CV029",
+"1NT20CV030",
+"1NT20CV031",
+"1NT20CV032",
+"1NT20CV033",
+"1NT20CV034",
+"1NT20CV035",
+"1NT20CV036",
+"1NT20CV037",
+"1NT20CV038",
+"1NT20CV039",
+"1NT20CV040",
+"1NT20CV041",
+"1NT20CV042",
+"1NT20CV043",
+"1NT20CV044",
+"1NT20CV045",
+"1NT20CV046",
+"1NT20CV047",
+"1NT20CV048",
+"1NT20CV049",
+"1NT20CV050",
     ]
 
 captcha = str(input('Enter captcha'))
 
 for i in usn:
-    pg.moveTo(1029, 429, duration=0.5)
+    pg.moveTo(1029, 429, duration=0.3)
     pg.click(1029, 429)
     pg.typewrite(i)
 
-    pg.moveTo(1029, 458, duration=0.5)
+    pg.moveTo(1029, 458, duration=0.3)
     pg.click(1029, 458)
     pg.typewrite(captcha)
 
-    pg.moveTo(1176, 546, duration=0.5)
+    pg.moveTo(1176, 546, duration=0.3)
     pg.click(1176, 546)
     time.sleep(0.5)
     pg.hotkey('ctrl', 'u')
