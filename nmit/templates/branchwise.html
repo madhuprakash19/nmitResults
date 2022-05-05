@@ -46,7 +46,7 @@
     {% for i in result %}
     <tr>
       <th scope="row">{{forloop.counter}}</th>
-      <td>{{i.sname.name}}</td>
+      <td><a href="{% url 'nmit:result' id=i.sname.id %}">{{i.sname.name}}</a></td>
       <td>{{i.sname.usn}}</td>
       <td>{{i.sgpa}}</td>
     </tr>

@@ -2,12 +2,42 @@
 {% block content %}
 <div class="container">
   <div class="jumbotron">
-    <h3>NAME: {{marks.sname.name}}</h3>
-    <h4 class="text text-muted">USN: {{marks.sname.usn}}</h4>
-    <p>BRANCH: {{marks.branch}}</p>
-    <b>SGPA: </b>{{marks.sgpa}}<br>
-    <b>CGPA: </b>{{marks.cgpa}}<br><br><br>
-    <p class="text-muted">Subject data coming soon</p>
+    <h3>NAME: {{Dmarks.sname.name}}</h3>
+    <h4 class="text text-muted">USN: {{Dmarks.sname.usn}}</h4>
+    <p>BRANCH: {{Dmarks.branch}}</p>
+    <b>SGPA: </b>{{Dmarks.sgpa}}<br>
+    <b>CGPA: </b>{{Dmarks.cgpa}}<br>
+    <b>Credits Registered: </b>{{Dmarks.creditsReg}}<br>
+    <b>Credits Earned: </b>{{Dmarks.creditsEarn}}<br>
+    <br><br>
+  </div>
+  <div class="table">
+    <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Subject Name</th>
+      <th scope="col">Total Credits</th>
+      <th scope="col">Credits Earned</th>
+      <th scope="col">CIE</th>
+      <th scope="col">SEE</th>
+      <th scope="col">TOTAL</th>
+      <th scope="col">GRADE</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in data %}
+    <tr>
+      <td>{{i.subname}}</td>
+      <td>{{i.subname.credits}}</td>
+      <td>{{i.creditsEarned}}</td>
+      <td>{{i.cie}}</td>
+      <td>{{i.see}}</td>
+      <td>{{i.total}}</td>
+      <td>{{i.grade}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table
   </div>
 </div>
 {% endblock %}

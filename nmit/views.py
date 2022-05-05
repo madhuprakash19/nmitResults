@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from nmit.models import student,gpa,missing
+from nmit.models import student,gpa,missing,marks
 # Create your views here.
 
 def sem3(request):
@@ -49,8 +49,9 @@ def namewise(request):
 
 def result(request,id):
     name = student.objects.get(id = id)
-    marks = gpa.objects.get(sname=name)
-    return render(request,'result.html',{'marks':marks})
+    Dmarks = gpa.objects.get(sname=name)
+    data = list(marks.objects.filter(sname=name))
+    return render(request,'result.html',{'Dmarks':Dmarks,'data':data})
 
 def branchwise(request):
     result = {}
