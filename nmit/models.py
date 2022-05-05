@@ -6,6 +6,8 @@ class student(models.Model):
     usn = models.CharField(max_length=20,blank=True,null=True)
     branch = models.CharField(max_length=50,blank=True,null=True)
     sem = models.IntegerField(blank=True,null=True,default=5)
+    ay = models.CharField(max_length=10,blank=True,null=True,default='2021-2022')
+
 
     def __str__(self):
         return str(self.name)+" "+str(self.usn)
@@ -13,7 +15,7 @@ class student(models.Model):
 class subjects(models.Model):
     code = models.CharField(max_length=20,blank=True,null=True)
     name = models.CharField(max_length=50,blank=True,null=True)
-    credits = models.IntegerField(blank=True,null=True,default=4)
+    credits = models.CharField(max_length=10,blank=True,null=True,default=0)
 
     def __str__(self):
         return str(self.name)
@@ -24,6 +26,8 @@ class gpa(models.Model):
     cgpa =  models.CharField(max_length=5,blank=True,null=True)
     branch = models.CharField(max_length=50,blank=True,null=True)
     sem = models.IntegerField(blank=True,null=True,default=5)
+    creditsReg =  models.CharField(max_length=10,blank=True,null=True,default=0)
+    creditsEarn =  models.CharField(max_length=10,blank=True,null=True,default=0)
 
     def __str__(self):
         return str(self.sname.name)
@@ -31,10 +35,10 @@ class gpa(models.Model):
 class marks(models.Model):
     sname = models.ForeignKey(student,on_delete = models.CASCADE,blank=True,null=True)
     subname = models.ForeignKey(subjects,on_delete = models.CASCADE,blank=True,null=True)
-    creditsEarned =  models.IntegerField(blank=True,null=True,default=4)
-    cie =  models.IntegerField(blank=True,null=True)
-    see = models.IntegerField(blank=True,null=True)
-    total = models.IntegerField(blank=True,null=True)
+    creditsEarned = models.CharField(max_length=10,blank=True,null=True,default=0)
+    cie =  models.CharField(max_length=10,blank=True,null=True,default=0)
+    see = models.CharField(max_length=10,blank=True,null=True,default=0)
+    total = models.CharField(max_length=10,blank=True,null=True,default=0)
     grade = models.CharField(max_length=5,blank=True,null=True)
 
     def __str__(self):
