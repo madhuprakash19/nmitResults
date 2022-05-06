@@ -22,7 +22,7 @@
         {% for i in topper3 %}
         <tr>
           <th scope="row">{{forloop.counter}}</th>
-          <td>{{i.sname.name}}</td>
+          <td><a href="{% url 'nmit:result' id=i.sname.id %}">{{i.sname.name}}</a></td>
           <td>{{i.sname.usn}}</td>
           <td>{{i.branch}}</td>
           <td>{{i.sgpa}}</td>
@@ -48,7 +48,7 @@
         {% for i in is3 %}
         <tr>
           <th scope="row">{{forloop.counter}}</th>
-          <td>{{i.sname.name}}</td>
+          <td><a href="{% url 'nmit:result' id=i.sname.id %}">{{i.sname.name}}</a></td>
           <td>{{i.sname.usn}}</td>
           <td>{{i.sgpa}}</td>
         </tr>
@@ -71,7 +71,7 @@
         {% for i in cs3 %}
         <tr>
           <th scope="row">{{forloop.counter}}</th>
-          <td>{{i.sname.name}}</td>
+          <td><a href="{% url 'nmit:result' id=i.sname.id %}">{{i.sname.name}}</a></td>
           <td>{{i.sname.usn}}</td>
           <td>{{i.sgpa}}</td>
         </tr>
@@ -94,7 +94,7 @@
         {% for i in ec3 %}
         <tr>
           <th scope="row">{{forloop.counter}}</th>
-          <td>{{i.sname.name}}</td>
+          <td><a href="{% url 'nmit:result' id=i.sname.id %}">{{i.sname.name}}</a></td>
           <td>{{i.sname.usn}}</td>
           <td>{{i.sgpa}}</td>
         </tr>
@@ -117,7 +117,7 @@
         {% for i in ee3 %}
         <tr>
           <th scope="row">{{forloop.counter}}</th>
-          <td>{{i.sname.name}}</td>
+          <td><a href="{% url 'nmit:result' id=i.sname.id %}">{{i.sname.name}}</a></td>
           <td>{{i.sname.usn}}</td>
           <td>{{i.sgpa}}</td>
         </tr>
@@ -140,7 +140,7 @@
         {% for i in me3 %}
         <tr>
           <th scope="row">{{forloop.counter}}</th>
-          <td>{{i.sname.name}}</td>
+          <td><a href="{% url 'nmit:result' id=i.sname.id %}">{{i.sname.name}}</a></td>
           <td>{{i.sname.usn}}</td>
           <td>{{i.sgpa}}</td>
         </tr>
@@ -163,7 +163,7 @@
       {% for i in ae3 %}
       <tr>
         <th scope="row">{{forloop.counter}}</th>
-        <td>{{i.sname.name}}</td>
+        <td><a href="{% url 'nmit:result' id=i.sname.id %}">{{i.sname.name}}</a></td>
         <td>{{i.sname.usn}}</td>
         <td>{{i.sgpa}}</td>
       </tr>
@@ -186,7 +186,7 @@
       {% for i in cv3 %}
       <tr>
         <th scope="row">{{forloop.counter}}</th>
-        <td>{{i.sname.name}}</td>
+        <td><a href="{% url 'nmit:result' id=i.sname.id %}">{{i.sname.name}}</a></td>
         <td>{{i.sname.usn}}</td>
         <td>{{i.sgpa}}</td>
       </tr>
