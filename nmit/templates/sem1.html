@@ -31,6 +31,170 @@
         {% endfor %}
       </tbody>
     </table>
+    <br><br>
+    <h3 class="text-center">Branch Wise</h3>
+    <br><br>
+    <h2>Information Science</h2>
+    <br>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">USN</th>
+          <th scope="col">SGPA</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in is1 %}
+        <tr>
+          <th scope="row">{{forloop.counter}}</th>
+          <td><a href="{% url 'nmit:result' id=i.sname.id %}">{{i.sname.name}}</a></td>
+          <td>{{i.sname.usn}}</td>
+          <td>{{i.sgpa}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <br>
+    <h2>Computer Science</h2>
+    <br>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">USN</th>
+          <th scope="col">SGPA</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in cs1 %}
+        <tr>
+          <th scope="row">{{forloop.counter}}</th>
+          <td><a href="{% url 'nmit:result' id=i.sname.id %}">{{i.sname.name}}</a></td>
+          <td>{{i.sname.usn}}</td>
+          <td>{{i.sgpa}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <br>
+    <h2>Electronics and Communication</h2>
+    <br>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">USN</th>
+          <th scope="col">SGPA</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in ec1 %}
+        <tr>
+          <th scope="row">{{forloop.counter}}</th>
+          <td><a href="{% url 'nmit:result' id=i.sname.id %}">{{i.sname.name}}</a></td>
+          <td>{{i.sname.usn}}</td>
+          <td>{{i.sgpa}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <br>
+    <h2>Electrical</h2>
+    <br>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">USN</th>
+          <th scope="col">SGPA</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in ee1 %}
+        <tr>
+          <th scope="row">{{forloop.counter}}</th>
+          <td><a href="{% url 'nmit:result' id=i.sname.id %}">{{i.sname.name}}</a></td>
+          <td>{{i.sname.usn}}</td>
+          <td>{{i.sgpa}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <br>
+    <h2>Mechanical</h2>
+    <br>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">USN</th>
+          <th scope="col">SGPA</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in me1 %}
+        <tr>
+          <th scope="row">{{forloop.counter}}</th>
+          <td><a href="{% url 'nmit:result' id=i.sname.id %}">{{i.sname.name}}</a></td>
+          <td>{{i.sname.usn}}</td>
+          <td>{{i.sgpa}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  <br>
+  <h2>Aeronautical </h2>
+  <br>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">USN</th>
+        <th scope="col">SGPA</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in ae1 %}
+      <tr>
+        <th scope="row">{{forloop.counter}}</th>
+        <td><a href="{% url 'nmit:result' id=i.sname.id %}">{{i.sname.name}}</a></td>
+        <td>{{i.sname.usn}}</td>
+        <td>{{i.sgpa}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <br>
+  <h2>Civil</h2>
+  <br>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">USN</th>
+        <th scope="col">SGPA</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in cv1 %}
+      <tr>
+        <th scope="row">{{forloop.counter}}</th>
+        <td><a href="{% url 'nmit:result' id=i.sname.id %}">{{i.sname.name}}</a></td>
+        <td>{{i.sname.usn}}</td>
+        <td>{{i.sgpa}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
 
 
 {% endblock %}

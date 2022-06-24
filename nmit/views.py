@@ -2,9 +2,15 @@ from django.shortcuts import render
 from nmit.models import student,gpa,missing,marks
 # Create your views here.
 def sem1(request):
-    topper1 = list(gpa.objects.filter(branch = 'B.E - FY, Sem 1').order_by('-sgpa')[:30:1])
-    print(topper1)
-    return render(request,'sem1.html',{'topper1':topper1})
+    topper1 = list(gpa.objects.filter(branch = 'B.E - FY, Sem 1').order_by('-sgpa')[:10:1])
+    is1 = list(gpa.objects.filter(branch = 'B.E - FY, Sem 1',sname__usn__contains='IS').order_by('-sgpa')[:10:1])
+    cs1 = list(gpa.objects.filter(branch = 'B.E - FY, Sem 1',sname__usn__contains='CS').order_by('-sgpa')[:10:1])
+    ec1 = list(gpa.objects.filter(branch = 'B.E - FY, Sem 1',sname__usn__contains='EC').order_by('-sgpa')[:10:1])
+    cv1 = list(gpa.objects.filter(branch = 'B.E - FY, Sem 1',sname__usn__contains='CV').order_by('-sgpa')[:10:1])
+    me1 = list(gpa.objects.filter(branch = 'B.E - FY, Sem 1',sname__usn__contains='ME').order_by('-sgpa')[:10:1])
+    ae1 = list(gpa.objects.filter(branch = 'B.E - FY, Sem 1',sname__usn__contains='AE').order_by('-sgpa')[:10:1])
+    ee1 = list(gpa.objects.filter(branch = 'B.E - FY, Sem 1',sname__usn__contains='EE').order_by('-sgpa')[:10:1])
+    return render(request,'sem1.html',{'topper1':topper1,'is1':is1,'cs1':cs1,'ec1':ec1,'me1':me1,'ae1':ae1,'ee1':ee1,'cv1':cv1})
 
 
 
