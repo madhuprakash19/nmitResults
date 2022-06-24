@@ -19,7 +19,7 @@ from nmit import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.sem3),
+    path('',views.sem1),
     path('info/',include('nmit.urls',namespace='nmit')),
 
 ]

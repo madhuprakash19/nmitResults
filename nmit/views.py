@@ -1,6 +1,12 @@
 from django.shortcuts import render
 from nmit.models import student,gpa,missing,marks
 # Create your views here.
+def sem1(request):
+    topper1 = list(gpa.objects.filter(branch = 'B.E - FY, Sem 1').order_by('-sgpa')[:30:1])
+    print(topper1)
+    return render(request,'sem1.html',{'topper1':topper1})
+
+
 
 def sem3(request):
     topper3 = list(gpa.objects.filter(branch__in = ['B.E - IS, Sem 3','B.E - CS, Sem 3','B.E - EC, Sem 3','B.E - EE, Sem 3','B.E - ME, Sem 3','B.E - AE, Sem 3','B.E - CV, Sem 3']).order_by('-sgpa')[:10:1])

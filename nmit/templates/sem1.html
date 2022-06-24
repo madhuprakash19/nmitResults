@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="jumbotron">
+    <p class="text text-muted">Try Namewise Feature from Nav Bar</p>
+    <p class="text text-muted">If your name is missing it means that it was not shown in NMIT website during creation of this site</p>
+    <p class="text text-muted">This site was made by web scrapping https://nmitresults.contineo.in/</p>
+    <b>Missing USN ??</b>
+    <a href="{% url 'nmit:missing' %}">Click here to add</a><br>
+    <h1>UNDER DATA EXTRACTION</h1>
+    <h3 class="text-center">1st SEM toppers list 2021-2022</h3>
+    <br>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">USN</th>
+          <th scope="col">BRANCH</th>
+          <th scope="col">SGPA</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in topper1 %}
+        <tr>
+          <th scope="row">{{forloop.counter}}</th>
+          <td><a href="{% url 'nmit:result' id=i.sname.id %}">{{i.sname.name}}</a></td>
+          <td>{{i.sname.usn}}</td>
+          <td>{{i.branch}}</td>
+          <td>{{i.sgpa}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+
+{% endblock %}
