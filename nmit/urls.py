@@ -12,4 +12,5 @@ urlpatterns = [
     path('result/<int:id>',views.result,name='result'),
     path('branchwise',views.branchwise,name='branchwise'),
     path('missingusn',views.missingusn,name='missing'),
+    path('subject',views.subject,name='subject'),
 ]

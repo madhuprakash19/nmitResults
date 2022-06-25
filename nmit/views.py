@@ -1,6 +1,33 @@
 from django.shortcuts import render
-from nmit.models import student,gpa,missing,marks
+from nmit.models import student,gpa,missing,marks,subjects
+from django.db.models import Count
+
 # Create your views here.
+
+def subject(request):
+    check = 0
+    temp = subjects.objects.all().order_by('-id')[:16]
+    if request.method == 'POST':
+        check=1
+        x=[]
+        y=[]
+        sub = request.POST['subject']
+        a = subjects.objects.get(code=sub)
+        subject = a.name
+        result = list(marks.objects.filter(subname=a)
+        .values('grade')
+        .annotate(dcount=Count('grade'))
+        .order_by()
+        )
+        for i in result:
+            x.append(list(i.values())[0])
+            y.append(list(i.values())[1])
+        return render(request,'subject.html',{'check':check,'x':x,'y':y,'subject':subject,'temp':temp})
+    return render(request,'subject.html',{'check':check,'temp':temp})
+
+
+
+
 def sem1(request):
     topper1 = list(gpa.objects.filter(branch = 'B.E - FY, Sem 1').order_by('-sgpa')[:10:1])
     is1 = list(gpa.objects.filter(branch = 'B.E - FY, Sem 1',sname__usn__contains='IS').order_by('-sgpa')[:10:1])
