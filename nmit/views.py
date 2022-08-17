@@ -90,7 +90,7 @@ def namewise(request):
     result = {}
     if request.method == 'POST':
         sname = request.POST.get('name', False)
-        result = list(student.objects.filter(name__contains=sname))
+        result = list(student.objects.filter(name__contains=sname).order_by('-id'))
         return render(request,'namewise.html',{'result':result})
     return render(request,'namewise.html',{'result':result})
 
