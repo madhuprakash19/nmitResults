@@ -97,8 +97,17 @@ def namewise(request):
 def result(request,id):
     name = student.objects.get(id = id)
     Dmarks = gpa.objects.get(sname=name)
+    temp = float(Dmarks.sgpa)
+    if temp > 8:
+        color = "#52ff57"
+    elif temp>6:
+        color = "#fafa34"
+    elif temp>4:
+        color = "#f29c2c"
+    else:
+        color = "#f01313"
     data = list(marks.objects.filter(sname=name))
-    return render(request,'result.html',{'Dmarks':Dmarks,'data':data})
+    return render(request,'result.html',{'Dmarks':Dmarks,'data':data,'color':color})
 
 def branchwise(request):
     result = {}
