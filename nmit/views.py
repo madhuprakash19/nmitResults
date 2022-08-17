@@ -75,6 +75,14 @@ def sem7(request):
     cv7 = list(gpa.objects.filter(branch = 'B.E - CV, Sem 7').order_by('-sgpa')[:10:1])
     return render(request,'sem7.html',{'topper7':topper7,'is7':is7,'cs7':cs7,'ec7':ec7,'me7':me7,'ae7':ae7,'ee7':ee7,'cv7':cv7})
 
+def sem6(request):
+    topper6 = list(gpa.objects.filter(branch__in = ['B.E - IS, Sem 6','B.E - CS, Sem 6','B.E - EC, Sem 6']).order_by('-sgpa')[:10:1])
+    is6 = list(gpa.objects.filter(branch = 'B.E - IS, Sem 6').order_by('-sgpa')[:10:1])
+    cs6 = list(gpa.objects.filter(branch = 'B.E - CS, Sem 6').order_by('-sgpa')[:10:1])
+    ec6 = list(gpa.objects.filter(branch = 'B.E - EC, Sem 6').order_by('-sgpa')[:10:1])
+    return render(request,'sem6.html',{'topper6':topper6,'is6':is6,'cs6':cs6,'ec6':ec6})
+
+
 def aboutus(request):
     return render(request,'aboutus.html')
 

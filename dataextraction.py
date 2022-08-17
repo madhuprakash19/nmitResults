@@ -8,39 +8,44 @@ from nmit.models import student,gpa
 
 # exec(open("dataextraction.py").read())
 
-usn = [
-"11NT21IS001-T",
-"11NT21IS002-T",
-"11NT21IS003-T",
-"11NT21IS004-T",
-"11NT21IS005-T",
-"11NT21IS006-T",
-"11NT21IS007-T",
-"11NT21IS008-T",
-"11NT21IS009-T",
-"11NT21IS010-T",
-"11NT21IS011-T",
-"11NT21IS012-T",
-"11NT21IS013-T",
-"11NT21IS014-T",
-"11NT21IS015-T",
-"11NT21IS016-T",
-"11NT21IS017-T",
-"11NT21IS018-T",
-"11NT21IS019-T",
-"11NT21IS020-T",
+# usn = [
+# "11NT21IS001-T",
+# "11NT21IS002-T",
+# "11NT21IS003-T",
+# "11NT21IS004-T",
+# "11NT21IS005-T",
+# "11NT21IS006-T",
+# "11NT21IS007-T",
+# "11NT21IS008-T",
+# "11NT21IS009-T",
+# "11NT21IS010-T",
+# "11NT21IS011-T",
+# "11NT21IS012-T",
+# "11NT21IS013-T",
+# "11NT21IS014-T",
+# "11NT21IS015-T",
+# "11NT21IS016-T",
+# "11NT21IS017-T",
+# "11NT21IS018-T",
+# "11NT21IS019-T",
+# "11NT21IS020-T",
 
-    ]
+#     ]
 
 captcha = str(input('Enter captcha'))
 
-for i in usn:
+for i in range(1,50):
+    num=str(i)
+    num = num.zfill(3)
+    i="1NT18IS"+str(num)
     pg.moveTo(1029, 429, duration=0.3)
     pg.click(1029, 429)
+    pg.hotkey('ctrl', 'a')
     pg.typewrite(i)
 
     pg.moveTo(1029, 458, duration=0.3)
     pg.click(1029, 458)
+    pg.hotkey('ctrl', 'a')
     pg.typewrite(captcha)
 
     pg.moveTo(1176, 546, duration=0.3)

@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="jumbotron">
+    <p class="text text-muted">If your name is missing it means that it was not shown in NMIT website during creation of this site</p>
+    <p class="text text-muted">This site was made by web scrapping https://nmitresults.contineo.in/</p>
+    <b>Missing USN ??</b>
+    <a href="{% url 'nmit:missing' %}">Click here to add</a><br>
+    <h3 class="text-center">6th SEM toppers list 2021-2022</h3>
+    <br>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">USN</th>
+          <th scope="col">BRANCH</th>
+          <th scope="col">SGPA</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in topper6 %}
+        <tr>
+          <th scope="row">{{forloop.counter}}</th>
+          <td><a href="{% url 'nmit:result' id=i.sname.id %}">{{i.sname.name}}</a></td>
+          <td>{{i.sname.usn}}</td>
+          <td>{{i.branch}}</td>
+          <td>{{i.sgpa}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <br><br>
+    <h3 class="text-center">Branch Wise</h3>
+    <br><br>
+    <h2>Information Science</h2>
+    <br>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">USN</th>
+          <th scope="col">SGPA</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in is6 %}
+        <tr>
+          <th scope="row">{{forloop.counter}}</th>
+          <td><a href="{% url 'nmit:result' id=i.sname.id %}">{{i.sname.name}}</a></td>
+          <td>{{i.sname.usn}}</td>
+          <td>{{i.sgpa}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <br>
+    <h2>Computer Science</h2>
+    <br>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">USN</th>
+          <th scope="col">SGPA</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in cs6 %}
+        <tr>
+          <th scope="row">{{forloop.counter}}</th>
+          <td><a href="{% url 'nmit:result' id=i.sname.id %}">{{i.sname.name}}</a></td>
+          <td>{{i.sname.usn}}</td>
+          <td>{{i.sgpa}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <br>
+    <h2>Electronics and Communication</h2>
+    <br>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">USN</th>
+          <th scope="col">SGPA</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in ec6 %}
+        <tr>
+          <th scope="row">{{forloop.counter}}</th>
+          <td><a href="{% url 'nmit:result' id=i.sname.id %}">{{i.sname.name}}</a></td>
+          <td>{{i.sname.usn}}</td>
+          <td>{{i.sgpa}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <br>
+
+    <br>
+    <h2 class="text text-center">OTHER BRANCHES COMING SOON</h2>
+
+
+{% endblock %}

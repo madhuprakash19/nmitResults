@@ -8,73 +8,26 @@ import pyperclip
 
 # exec(open("test.py").read())
 
-usn = [
-"11NT21EC200-T",
-"11NT21EC201-T",
-"11NT21EC202-T",
-"11NT21EC203-T",
-"11NT21EC204-T",
-"11NT21EC205-T",
-"11NT21EC206-T",
-"11NT21EC207-T",
-"11NT21EC208-T",
-"11NT21EC209-T",
-"11NT21EC210-T",
-"11NT21EC211-T",
-"11NT21EC212-T",
-"11NT21EC213-T",
-"11NT21EC214-T",
-"11NT21EC215-T",
-"11NT21EC216-T",
-"11NT21EC217-T",
-"11NT21EC218-T",
-"11NT21EC219-T",
-"11NT21EC220-T",
-"11NT21EC221-T",
-"11NT21EC222-T",
-"11NT21EC223-T",
-"11NT21EC224-T",
-"11NT21EC225-T",
-"11NT21EC226-T",
-"11NT21EC227-T",
-"11NT21EC228-T",
-"11NT21EC229-T",
-"11NT21EC230-T",
-"11NT21EC231-T",
-"11NT21EC232-T",
-"11NT21EC233-T",
-"11NT21EC234-T",
-"11NT21EC235-T",
-"11NT21EC236-T",
-"11NT21EC237-T",
-"11NT21EC238-T",
-"11NT21EC239-T",
-"11NT21EC240-T",
-"11NT21EC241-T",
-"11NT21EC242-T",
-"11NT21EC243-T",
-"11NT21EC244-T",
-"11NT21EC245-T",
-"11NT21EC246-T",
-"11NT21EC247-T",
-"11NT21EC248-T",
-"11NT21EC249-T",
-
-]
-
 captcha = str(input('Enter captcha'))
 
-for j in usn:
-    pg.moveTo(1029, 429, duration=0.3)
-    pg.click(1029, 429)
+for j in range(150,200):
+    num=str(j)
+    num = num.zfill(3)
+    j="1NT19EC"+str(num)
+    pg.moveTo(1116, 537, duration=0.2)
+    pg.click(1116, 537)
+    pg.hotkey('ctrl', 'a')
+    time.sleep(0.1)
     pg.typewrite(j)
 
-    pg.moveTo(1029, 458, duration=0.3)
-    pg.click(1029, 458)
+    pg.moveTo(1138, 574, duration=0.2)
+    pg.click(1138, 574)
+    pg.hotkey('ctrl', 'a')
+    time.sleep(0.1)
     pg.typewrite(captcha)
 
-    pg.moveTo(1176, 546, duration=0.3)
-    pg.click(1176, 546)
+    pg.moveTo(1214, 670, duration=0.3)
+    pg.click(1214, 670)
     time.sleep(0.5)
     pg.hotkey('ctrl', 'u')
     time.sleep(0.5)
@@ -117,11 +70,11 @@ for j in usn:
         rows = soup.find("table",{'class':'uk-table uk-table-striped res-table'}).find("tbody").find_all("tr")
 
         try:
-            temp = student.objects.get(usn=usn1)
+            temp = student.objects.get(usn=usn1,sem=8)
         except:
-            temp = student(name=name1, usn=usn1, branch=branch1)
+            temp = student(name=name1, usn=usn1, branch=branch1,sem=6)
             temp.save()
-        s = student.objects.get(usn=usn1)
+        s = student.objects.get(usn=usn1,sem=6)
         try:
             temp = gpa.objects.get(sname=s)
             temp.sgpa = sgpa1

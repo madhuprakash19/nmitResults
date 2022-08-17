@@ -1315,3 +1315,17 @@
 1NT19IS179,Data not found
 1NT19IS178,Data not found
 1NT19IS179,Data not found
+1NT18IS001,Data not found
+1NT18IS002,Data not found
+1NT18IS001,Data not found
+1NT18IS005,Data not found
+1NT18IS011,Data not found
+1NT18IS012,Data not found
+1NT18IS021,Data not found
+1NT18IS026,Data not found
+1NT18IS032,Data not found
+1NT18IS002,Data not found
+1NT18IS003,Data not found
+1NT18IS005,Data not found
+1NT18IS001,Data not found
+1NT18IS001,Data not found
