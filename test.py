@@ -10,10 +10,10 @@ import pyperclip
 
 captcha = str(input('Enter captcha'))
 
-for j in range(150,200):
+for j in range(50,100):
     num=str(j)
     num = num.zfill(3)
-    j="1NT19EC"+str(num)
+    j="1NT19AE"+str(num)
     pg.moveTo(1116, 537, duration=0.2)
     pg.click(1116, 537)
     pg.hotkey('ctrl', 'a')

@@ -6,7 +6,7 @@ from django.db.models import Count
 
 def subject(request):
     check = 0
-    temp = subjects.objects.all().order_by('-id')[:16]
+    temp = subjects.objects.all().order_by('-id')
     if request.method == 'POST':
         check=1
         x=[]
@@ -80,7 +80,11 @@ def sem6(request):
     is6 = list(gpa.objects.filter(branch = 'B.E - IS, Sem 6').order_by('-sgpa')[:10:1])
     cs6 = list(gpa.objects.filter(branch = 'B.E - CS, Sem 6').order_by('-sgpa')[:10:1])
     ec6 = list(gpa.objects.filter(branch = 'B.E - EC, Sem 6').order_by('-sgpa')[:10:1])
-    return render(request,'sem6.html',{'topper6':topper6,'is6':is6,'cs6':cs6,'ec6':ec6})
+    me6 = list(gpa.objects.filter(branch = 'B.E - ME, Sem 6').order_by('-sgpa')[:10:1])
+    ae6 = list(gpa.objects.filter(branch = 'B.E - AE, Sem 6').order_by('-sgpa')[:10:1])
+    ee6 = list(gpa.objects.filter(branch = 'B.E - EE, Sem 6').order_by('-sgpa')[:10:1])
+    cv6 = list(gpa.objects.filter(branch = 'B.E - CV, Sem 6').order_by('-sgpa')[:10:1])
+    return render(request,'sem6.html',{'topper6':topper6,'is6':is6,'cs6':cs6,'ec6':ec6,'me6':me6,'ae6':ae6,'ee6':ee6,'cv6':cv6})
 
 
 def aboutus(request):

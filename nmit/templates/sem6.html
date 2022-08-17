@@ -103,7 +103,98 @@
     <br>
 
     <br>
-    <h2 class="text text-center">OTHER BRANCHES COMING SOON</h2>
+    <h2>Electrical</h2>
+    <br>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">USN</th>
+          <th scope="col">SGPA</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in ee6 %}
+        <tr>
+          <th scope="row">{{forloop.counter}}</th>
+          <td><a href="{% url 'nmit:result' id=i.sname.id %}">{{i.sname.name}}</a></td>
+          <td>{{i.sname.usn}}</td>
+          <td>{{i.sgpa}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <br>
+    <h2>Mechanical</h2>
+    <br>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">USN</th>
+          <th scope="col">SGPA</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in me6 %}
+        <tr>
+          <th scope="row">{{forloop.counter}}</th>
+          <td><a href="{% url 'nmit:result' id=i.sname.id %}">{{i.sname.name}}</a></td>
+          <td>{{i.sname.usn}}</td>
+          <td>{{i.sgpa}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  <br>
+  <h2>Aeronautical </h2>
+  <br>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">USN</th>
+        <th scope="col">SGPA</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in ae6 %}
+      <tr>
+        <th scope="row">{{forloop.counter}}</th>
+        <td><a href="{% url 'nmit:result' id=i.sname.id %}">{{i.sname.name}}</a></td>
+        <td>{{i.sname.usn}}</td>
+        <td>{{i.sgpa}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <br>
+  <h2>Civil</h2>
+  <br>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">USN</th>
+        <th scope="col">SGPA</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in cv6 %}
+      <tr>
+        <th scope="row">{{forloop.counter}}</th>
+        <td><a href="{% url 'nmit:result' id=i.sname.id %}">{{i.sname.name}}</a></td>
+        <td>{{i.sname.usn}}</td>
+        <td>{{i.sgpa}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
 
 
 {% endblock %}
