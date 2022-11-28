@@ -22,8 +22,8 @@ class subjects(models.Model):
 
 class gpa(models.Model):
     sname = models.ForeignKey(student,on_delete = models.CASCADE,blank=True,null=True)
-    sgpa =  models.CharField(max_length=5,blank=True,null=True)
-    cgpa =  models.CharField(max_length=5,blank=True,null=True)
+    sgpa =  models.FloatField(max_length=5,blank=True,null=True)
+    cgpa =  models.FloatField(max_length=5,blank=True,null=True)
     branch = models.CharField(max_length=50,blank=True,null=True)
     sem = models.IntegerField(blank=True,null=True,default=5)
     creditsReg =  models.CharField(max_length=10,blank=True,null=True,default=0)
