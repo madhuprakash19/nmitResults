@@ -8,48 +8,77 @@ from nmit.models import student,gpa
 
 # exec(open("dataextraction.py").read())
 
-# usn = [
-# "11NT21IS001-T",
-# "11NT21IS002-T",
-# "11NT21IS003-T",
-# "11NT21IS004-T",
-# "11NT21IS005-T",
-# "11NT21IS006-T",
-# "11NT21IS007-T",
-# "11NT21IS008-T",
-# "11NT21IS009-T",
-# "11NT21IS010-T",
-# "11NT21IS011-T",
-# "11NT21IS012-T",
-# "11NT21IS013-T",
-# "11NT21IS014-T",
-# "11NT21IS015-T",
-# "11NT21IS016-T",
-# "11NT21IS017-T",
-# "11NT21IS018-T",
-# "11NT21IS019-T",
-# "11NT21IS020-T",
-
-#     ]
+usn = [
+"1NT21IS001",
+"1NT21IS002",
+"1NT21IS003",
+"1NT21IS004",
+"1NT21IS005",
+"1NT21IS006",
+"1NT21IS007",
+"1NT21IS008",
+"1NT21IS009",
+"1NT21IS010",
+"1NT21IS011",
+"1NT21IS012",
+"1NT21IS013",
+"1NT21IS014",
+"1NT21IS015",
+"1NT21IS016",
+"1NT21IS017",
+"1NT21IS018",
+"1NT21IS019",
+"1NT21IS020",
+"1NT21IS021",
+"1NT21IS022",
+"1NT21IS023",
+"1NT21IS024",
+"1NT21IS025",
+"1NT21IS026",
+"1NT21IS027",
+"1NT21IS028",
+"1NT21IS029",
+"1NT21IS030",
+"1NT21IS031",
+"1NT21IS032",
+"1NT21IS033",
+"1NT21IS034",
+"1NT21IS035",
+"1NT21IS036",
+"1NT21IS037",
+"1NT21IS038",
+"1NT21IS039",
+"1NT21IS040",
+"1NT21IS041",
+"1NT21IS042",
+"1NT21IS043",
+"1NT21IS044",
+"1NT21IS045",
+"1NT21IS046",
+"1NT21IS047",
+"1NT21IS048",
+"1NT21IS049",
+"1NT21IS050",
+    ]
 
 captcha = str(input('Enter captcha'))
 
-for i in range(1,50):
-    num=str(i)
-    num = num.zfill(3)
-    i="1NT18IS"+str(num)
-    pg.moveTo(1029, 429, duration=0.3)
-    pg.click(1029, 429)
+for i in usn:
+    # num=str(i)
+    # num = num.zfill(3)
+    # i="1NT18IS"+str(num)
+    pg.moveTo(1005, 535, duration=0.3)
+    pg.click(1005, 535)
     pg.hotkey('ctrl', 'a')
     pg.typewrite(i)
 
-    pg.moveTo(1029, 458, duration=0.3)
-    pg.click(1029, 458)
+    pg.moveTo(998, 570, duration=0.3)
+    pg.click(998, 570)
     pg.hotkey('ctrl', 'a')
     pg.typewrite(captcha)
 
-    pg.moveTo(1176, 546, duration=0.3)
-    pg.click(1176, 546)
+    pg.moveTo(1218, 680, duration=0.3)
+    pg.click(1218, 680)
     time.sleep(0.5)
     pg.hotkey('ctrl', 'u')
     time.sleep(0.5)

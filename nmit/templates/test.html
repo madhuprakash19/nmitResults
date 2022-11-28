@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+<br>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">USN</th>
+      <th scope="col">CGPA</th>
+      <th scope="col">SGPA</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in res %}
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td><a href="{% url 'nmit:result' id=i.sname.id %}">{{i.sname.name}}</a></td>
+      <td>{{i.sname.usn}}</td>
+      <td>{{i.cgpa}}</td>
+      <td>{{i.sgpa}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
