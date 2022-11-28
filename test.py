@@ -9,25 +9,76 @@ import pyperclip
 # exec(open("test.py").read())
 
 captcha = str(input('Enter captcha'))
-
-for j in range(50,50):
-    num=str(j)
-    num = num.zfill(3)
-    j="1NT19EE"+str(num)
-    pg.moveTo(1116, 537, duration=0.2)
-    pg.click(1116, 537)
+usn = [
+"1NT21EC001",
+"1NT21EC002",
+"1NT21EC003",
+"1NT21EC004",
+"1NT21EC005",
+"1NT21EC006",
+"1NT21EC007",
+"1NT21EC008",
+"1NT21EC009",
+"1NT21EC010",
+"1NT21EC011",
+"1NT21EC012",
+"1NT21EC013",
+"1NT21EC014",
+"1NT21EC015",
+"1NT21EC016",
+"1NT21EC017",
+"1NT21EC018",
+"1NT21EC019",
+"1NT21EC020",
+"1NT21EC021",
+"1NT21EC022",
+"1NT21EC023",
+"1NT21EC024",
+"1NT21EC025",
+"1NT21EC026",
+"1NT21EC027",
+"1NT21EC028",
+"1NT21EC029",
+"1NT21EC030",
+"1NT21EC031",
+"1NT21EC032",
+"1NT21EC033",
+"1NT21EC034",
+"1NT21EC035",
+"1NT21EC036",
+"1NT21EC037",
+"1NT21EC038",
+"1NT21EC039",
+"1NT21EC040",
+"1NT21EC041",
+"1NT21EC042",
+"1NT21EC043",
+"1NT21EC044",
+"1NT21EC045",
+"1NT21EC046",
+"1NT21EC047",
+"1NT21EC048",
+"1NT21EC049",
+"1NT21EC050",
+    ]
+for j in usn:
+    # num=str(j)
+    # num = num.zfill(3)
+    # j="1NT19EE"+str(num)
+    pg.moveTo(1005, 535, duration=0.3)
+    pg.click(1005, 535)
     pg.hotkey('ctrl', 'a')
     time.sleep(0.1)
     pg.typewrite(j)
 
-    pg.moveTo(1138, 574, duration=0.2)
-    pg.click(1138, 574)
+    pg.moveTo(998, 570, duration=0.3)
+    pg.click(998, 570)
     pg.hotkey('ctrl', 'a')
     time.sleep(0.1)
     pg.typewrite(captcha)
 
-    pg.moveTo(1214, 670, duration=0.3)
-    pg.click(1214, 670)
+    pg.moveTo(1218, 680, duration=0.3)
+    pg.click(1218, 680)
     time.sleep(0.5)
     pg.hotkey('ctrl', 'u')
     time.sleep(0.5)
