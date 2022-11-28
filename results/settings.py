@@ -27,7 +27,9 @@ SECRET_KEY = 'django-insecure-tgr=oxp+nts0=*e!$ma_7!z!s#s&*(@u-=00**zv5i=(1d(50-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['nmit-results.herokuapp.com','127.0.0.1','172.16.15.174']
+ALLOWED_HOSTS = ['nmit-results.herokuapp.com','127.0.0.1','172.16.15.174','nmit-result.herokuapp.com']
+
+
 
 
 # Application definition
