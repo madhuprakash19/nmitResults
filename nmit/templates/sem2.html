@@ -1,15 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-<br><br><br><br><br>
-<h2 class="text-center">SEM 2 Results</h2>
-<h3 class="text-center text-muted">Udating Soon</h3>
 <div class="jumbotron">
-  <p class="text text-muted">Try Namewise Feature from Nav Bar</p>
+  <p class="text text-muted">Try <a href="{% url 'nmit:namewise' %}">NameWise</a> Feature</p>
+  <p class="text text-muted">Try <a href="{% url 'nmit:branchwise' %}">BranchWise</a> Feature</p>
   <p class="text text-muted">If your name is missing it means that it was not shown in NMIT website during creation of this site</p>
   <p class="text text-muted">This site was made by web scrapping https://nmitresults.contineo.in/</p>
   <b>Missing USN ??</b>
   <a href="{% url 'nmit:missing' %}">Click here to add</a><br>
-  <h3 class="text-center">1st SEM toppers list 2021-2022</h3>
+  <h3 class="text-center">2nd SEM toppers list 2021-2022</h3>
   <br>
   <table class="table">
     <thead class="thead-dark">
@@ -72,6 +70,29 @@
     </thead>
     <tbody>
       {% for i in cs1 %}
+      <tr>
+        <th scope="row">{{forloop.counter}}</th>
+        <td><a href="{% url 'nmit:result' id=i.sname.id %}">{{i.sname.name}}</a></td>
+        <td>{{i.sname.usn}}</td>
+        <td>{{i.sgpa}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <br>
+  <h2>AI & DS</h2>
+  <br>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">USN</th>
+        <th scope="col">SGPA</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in ai1 %}
       <tr>
         <th scope="row">{{forloop.counter}}</th>
         <td><a href="{% url 'nmit:result' id=i.sname.id %}">{{i.sname.name}}</a></td>
